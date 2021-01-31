@@ -1,0 +1,17 @@
+dubbo:
+  application:
+     name: class-provider
+  registry:
+     address: nacos://192.168.31.188:8848
+     parameters:
+        namespace: dubbo-service
+  config-center:
+     namespace: dubbo-service
+  monitor:
+     protocol: registry
+  protocol:
+    name: dubbo
+    port: -1
+
+logBack:
+   logPathDir: ${logPathDir:./log/${dubbo.application.name}}

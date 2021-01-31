@@ -1,0 +1,20 @@
+dubbo:
+  application:
+     name: dubbo-consumer
+  registry:
+     address: nacos://192.168.31.188:8848
+     parameters:
+        namespace: dubbo-service
+     group: test
+  config-center:
+     namespace: dubbo-service
+  monitor:
+     protocol: registry
+  protocol:
+     name: dubbo
+     port: -1
+server:
+  port: ${PORT:8721}
+
+logBack:
+   logPathDir: ${logPathDir:./log/${dubbo.application.name}}
